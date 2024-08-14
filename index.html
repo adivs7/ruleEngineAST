@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rule Engine</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      input,
+      textarea,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .result {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Rule Engine</h1>
+      <h2>Create Rule</h2>
+      <textarea
+        id="rule-input"
+        placeholder="Enter your rule here (e.g., age > 30 AND department = 'Sales')"
+      ></textarea>
+      <button onclick="createRule()">Create Rule</button>
+      <div id="create-rule-result" class="result"></div>
+
+      <h2>Combine Rules</h2>
+      <textarea
+        id="combine-rules-input"
+        placeholder="Enter rules to combine, separated by semicolons"
+      ></textarea>
+      <button onclick="combineRules()">Combine Rules</button>
+      <div id="combine-rule-result" class="result"></div>
+
+      <h2>Evaluate Rule</h2>
+      <textarea
+        id="evaluate-rule-ast"
+        placeholder="Enter AST (from previous results)"
+      ></textarea>
+      <textarea
+        id="evaluate-rule-data"
+        placeholder="Enter JSON data to evaluate (e.g., { 'age': 35, 'department': 'Sales' })"
+      ></textarea>
+      <button onclick="evaluateRule()">Evaluate Rule</button>
+      <div id="evaluate-rule-result" class="result"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
